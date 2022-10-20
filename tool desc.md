@@ -21,3 +21,6 @@
 考虑到原本就没有处理csr有关的寄存器，我强烈怀疑FSCSR有关的伪指令也是处理不掉的。不过就是有一个好处，文档里面写的是The fcsr register can be read and written with the FRCSR and FSCSR instructions, which are assembler pseudoinstructions built on the underlying CSR access instructions.也就是说可以不用专门处理CSR有关内容，直接放掉也不影响使用。但愿写完后后不会因为它出错吧。
 
 其它的修改还在改。
+
+https://github.com/riscv/riscv-opcodes
+从这里查询opcode，我另说一句，相对于这个官方库，现在的做法有些太造轮子了。
