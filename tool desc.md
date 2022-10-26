@@ -68,3 +68,16 @@ error: "/home/phlilp_alapa/.rustup/toolchains/nightly-2020-05-01-x86_64-unknown-
 但是，我们现在rcore作业要求的是最新版本，它是rustc 1.66.0-nightly (c97d02cdb 2022-10-05)
 git clone https://github.com/rcore-os/rcore-fs.git
 Failed to connect to github.com port 443: Connection refused
+
+为了解决这个问题，我决心直接删除了这个rustup
+
+最逆天的还是这个预编译，这个指定版本号。不知道是哪一行编译做出了这种烂事。
+
+理论上啊，rust是支持迁移的，我从官方文档里面翻到了这个工作该怎么做
+https://doc.rust-lang.org/edition-guide/editions/transitioning-an-existing-project-to-a-new-edition.html
+但是我没法修。因为我还没有找到如何装低版本的rust，各地文档里面都没有找到。
+
+文档写的也乐：
+目前用于操作系统实验开发的 rustc 编译器的版本不局限在 1.46.0 这样的数字上，你可以选择更新版本的 rustc 编译器。但注意只能用 rustc 的 nightly 类型的版本。
+
+但rust如何回滚版本呢？恐怕也只可以去重装了，不知道如何去办。
