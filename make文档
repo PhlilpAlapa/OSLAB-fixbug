@@ -1,0 +1,227 @@
+Installing rcore-fs-fuse
+    Updating git repository `https://github.com/rcore-os/rcore-fs`
+  Installing rcore-fs-fuse v0.1.0 (https://github.com/rcore-os/rcore-fs?rev=7f5eeac#7f5eeac8)
+    Updating crates.io index
+  Downloaded structopt v0.2.18
+  Downloaded git-version v0.3.5
+  Downloaded bitvec v0.17.4
+  Downloaded git-version-macro v0.3.5
+  Downloaded log v0.3.9
+  Downloaded radium v0.3.0
+  Downloaded structopt-derive v0.2.18
+  Downloaded either v1.8.0
+  Downloaded unicode-ident v1.0.5
+  Downloaded unicode-xid v0.1.0
+  Downloaded quote v0.6.13
+  Downloaded proc-macro2 v1.0.47
+  Downloaded winapi-build v0.1.1
+  Downloaded proc-macro-hack v0.5.19
+  Downloaded time v0.1.44
+  Downloaded heck v0.3.3
+  Downloaded proc-macro2 v0.4.30
+  Downloaded spin v0.5.2
+  Downloaded log v0.4.17
+  Downloaded kernel32-sys v0.2.2
+  Downloaded syn v0.15.44
+  Downloaded unicode-segmentation v1.10.0
+  Downloaded syn v1.0.103
+  Downloaded libc v0.2.137
+  Downloaded winapi v0.2.8
+  Downloaded memchr v0.1.11
+  Downloaded regex v0.1.80
+  Downloaded thread-id v2.0.0
+  Downloaded regex-syntax v0.3.9
+  Downloaded thread_local v0.2.7
+  Downloaded env_logger v0.3.5
+  Downloaded aho-corasick v0.5.3
+  Downloaded static_assertions v0.3.4
+  Downloaded utf8-ranges v0.1.3
+  Downloaded 34 crates (2.7 MB) in 3.31s
+   Compiling libc v0.2.137
+   Compiling log v0.4.17
+   Compiling winapi-build v0.1.1
+   Compiling cfg-if v1.0.0
+   Compiling proc-macro2 v1.0.47
+   Compiling proc-macro2 v0.4.30
+   Compiling winapi v0.2.8
+   Compiling unicode-ident v1.0.5
+   Compiling unicode-xid v0.1.0
+   Compiling quote v1.0.21
+   Compiling proc-macro-hack v0.5.19
+   Compiling syn v1.0.103
+   Compiling spin v0.5.2
+   Compiling syn v0.15.44
+   Compiling either v1.8.0
+   Compiling radium v0.3.0
+   Compiling kernel32-sys v0.2.2
+   Compiling unicode-width v0.1.10
+   Compiling unicode-segmentation v1.10.0
+   Compiling bitvec v0.17.4
+   Compiling textwrap v0.11.0
+   Compiling heck v0.3.3
+   Compiling regex-syntax v0.3.9
+   Compiling static_assertions v0.3.4
+   Compiling utf8-ranges v0.1.3
+   Compiling strsim v0.8.0
+   Compiling bitflags v1.3.2
+   Compiling vec_map v0.8.2
+   Compiling ansi_term v0.12.1
+   Compiling log v0.3.9
+   Compiling quote v0.6.13
+   Compiling thread-id v2.0.0
+   Compiling rcore-fs v0.1.0 (/home/phlilp_alapa/.cargo/git/checkouts/rcore-fs-7fdf258332f6146d/7f5eeac/rcore-fs)       
+   Compiling memchr v0.1.11
+   Compiling atty v0.2.14
+   Compiling thread_local v0.2.7
+   Compiling aho-corasick v0.5.3
+   Compiling clap v2.34.0
+   Compiling time v0.1.44
+warning: the type `[u8; 1024]` does not permit being left uninitialized
+  --> rcore-fs/src/dev/mod.rs:62:61
+   |
+62 |                 let mut block_buf: [u8; 1 << 10] = unsafe { MaybeUninit::uninit().assume_init() };
+   |                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |                                                             |
+   |                                                             this code causes undefined behavior when executed      
+   |                                                             help: use `MaybeUninit<T>` instead, and only call `assume_init` after initialization is done
+   |
+   = note: integers must not be uninitialized
+   = note: `#[warn(invalid_value)]` on by default
+
+warning: the type `[u8; 1024]` does not permit being left uninitialized
+  --> rcore-fs/src/dev/mod.rs:89:61
+   |
+89 |                 let mut block_buf: [u8; 1 << 10] = unsafe { MaybeUninit::uninit().assume_init() };
+   |                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |                                                             |
+   |                                                             this code causes undefined behavior when executed      
+   |                                                             help: use `MaybeUninit<T>` instead, and only call `assume_init` after initialization is done
+   |
+   = note: integers must not be uninitialized
+
+   Compiling rcore-fs-sfs v0.1.0 (/home/phlilp_alapa/.cargo/git/checkouts/rcore-fs-7fdf258332f6146d/7f5eeac/rcore-fs-sfs)
+   Compiling rcore-fs-ramfs v0.1.0 (/home/phlilp_alapa/.cargo/git/checkouts/rcore-fs-7fdf258332f6146d/7f5eeac/rcore-fs-ramfs)
+   Compiling rcore-fs-sefs v0.1.0 (/home/phlilp_alapa/.cargo/git/checkouts/rcore-fs-7fdf258332f6146d/7f5eeac/rcore-fs-sefs)
+   Compiling regex v0.1.80
+warning: the type `structs::DiskEntry` does not permit being left uninitialized
+   --> rcore-fs-sfs/src/lib.rs:188:48
+    |
+188 |         let mut direntry: DiskEntry = unsafe { MaybeUninit::uninit().assume_init() };
+    |                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |                                                |
+    |                                                this code causes undefined behavior when executed
+    |                                                help: use `MaybeUninit<T>` instead, and only call `assume_init` after initialization is done
+    |
+note: integers must not be uninitialized (in this struct field)
+   --> rcore-fs-sfs/src/structs.rs:70:5
+    |
+70  |     pub id: u32,
+    |     ^^^^^^^^^^^
+    = note: `#[warn(invalid_value)]` on by default
+
+warning: the type `structs::DiskEntry` does not permit being left uninitialized
+  --> rcore-fs-sefs/src/lib.rs:39:48
+   |
+39 |         let mut direntry: DiskEntry = unsafe { MaybeUninit::uninit().assume_init() };
+   |                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |                                                |
+   |                                                this code causes undefined behavior when executed
+   |                                                help: use `MaybeUninit<T>` instead, and only call `assume_init` after initialization is done
+   |
+note: integers must not be uninitialized (in this struct field)
+  --> rcore-fs-sefs/src/structs.rs:50:5
+   |
+50 |     pub id: u32,
+   |     ^^^^^^^^^^^
+   = note: `#[warn(invalid_value)]` on by default
+
+warning: `rcore-fs` (lib) generated 2 warnings
+   Compiling env_logger v0.3.5
+warning: `rcore-fs-sefs` (lib) generated 1 warning
+warning: `rcore-fs-sfs` (lib) generated 1 warning
+   Compiling structopt-derive v0.2.18
+   Compiling git-version-macro v0.3.5
+   Compiling structopt v0.2.18
+   Compiling git-version v0.3.5
+   Compiling rcore-fs-fuse v0.1.0 (/home/phlilp_alapa/.cargo/git/checkouts/rcore-fs-7fdf258332f6146d/7f5eeac/rcore-fs-fuse)
+warning: the type `[u8; 4096]` does not permit being left uninitialized
+  --> rcore-fs-fuse/src/zip.rs:27:52
+   |
+27 |             let mut buf: [u8; BUF_SIZE] = unsafe { MaybeUninit::uninit().assume_init() };
+   |                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |                                                    |
+   |                                                    this code causes undefined behavior when executed
+   |                                                    help: use `MaybeUninit<T>` instead, and only call `assume_init` 
+after initialization is done
+   |
+   = note: integers must not be uninitialized
+   = note: `#[warn(invalid_value)]` on by default
+
+warning: the type `[u8; 4096]` does not permit being left uninitialized
+  --> rcore-fs-fuse/src/zip.rs:62:56
+   |
+62 |                 let mut buf: [u8; BUF_SIZE] = unsafe { MaybeUninit::uninit().assume_init() };
+   |                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |                                                        |
+   |                                                        this code causes undefined behavior when executed
+   |                                                        help: use `MaybeUninit<T>` instead, and only call `assume_init` after initialization is done
+   |
+   = note: integers must not be uninitialized
+
+warning: the type `[u8; 4096]` does not permit being left uninitialized
+  --> rcore-fs-fuse/src/zip.rs:76:56
+   |
+76 |                 let mut buf: [u8; BUF_SIZE] = unsafe { MaybeUninit::uninit().assume_init() };
+   |                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |                                                        |
+   |                                                        this code causes undefined behavior when executed
+   |                                                        help: use `MaybeUninit<T>` instead, and only call `assume_init` after initialization is done
+   |
+   = note: integers must not be uninitialized
+
+warning: `rcore-fs-fuse` (lib) generated 3 warnings
+    Finished release [optimized] target(s) in 2m 20s
+  Installing /home/phlilp_alapa/.cargo/bin/rcore-fs-fuse
+   Installed package `rcore-fs-fuse v0.1.0 (https://github.com/rcore-os/rcore-fs?rev=7f5eeac#7f5eeac8)` (executable `rcore-fs-fuse`)
+cat /dev/null > build/riscv32/etc/ld-musl-riscv32.path
+wget "http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/riscv32/alpine-minirootfs-3.12.0-riscv32.tar.gz" -O alpine/alpine-minirootfs-3.12.0-riscv32.tar.gz
+--2022-10-26 21:18:15--  http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/riscv32/alpine-minirootfs-3.12.0-riscv32.tar.gz
+Resolving dl-cdn.alpinelinux.org (dl-cdn.alpinelinux.org)... 151.101.130.133, 151.101.194.133, 151.101.2.133, ...
+Connecting to dl-cdn.alpinelinux.org (dl-cdn.alpinelinux.org)|151.101.130.133|:80... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2022-10-26 21:18:15 ERROR 404: Not Found.
+
+make: [Makefile:180: alpine/alpine-minirootfs-3.12.0-riscv32.tar.gz] Error 8 (ignored)
+Alpine rootfs disabled
+Building rust programs
+info: syncing channel updates for 'nightly-2020-05-01-x86_64-unknown-linux-gnu'
+info: latest update on 2020-05-01, rust version 1.45.0-nightly (7ced01a73 2020-04-30)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'rust-docs'
+info: downloading component 'rust-std'
+info: downloading component 'rustc'
+info: installing component 'rustfmt'
+    Updating crates.io index
+    Updating git repository `https://github.com/rcore-os/isomorphic_drivers`
+    Updating git repository `https://github.com/jiegec/treebitmap`
+  Downloaded rustversion v1.0.3
+  Downloaded bitflags v1.2.1
+  Downloaded proc-macro2 v1.0.18
+  Downloaded quote v1.0.7
+  Downloaded unicode-xid v0.2.0
+  Downloaded byteorder v1.3.1
+  Downloaded buddy_system_allocator v0.4.0
+  Downloaded cfg-if v0.1.7
+  Downloaded syn v1.0.31
+  Downloaded rlibc v1.0.0
+  Downloaded log v0.4.6
+  Downloaded spin v0.5.0
+  Downloaded volatile v0.2.6
+  Downloaded managed v0.7.1
+  Downloaded smoltcp v0.6.0
+  Downloaded 15 crates (590.0 KB) in 2.31s
+error: "/home/phlilp_alapa/.rustup/toolchains/nightly-2020-05-01-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/Cargo.lock" does not exist, unable to build with the standard library, try:
+        rustup component add rust-src
+make: *** [Makefile:68: rust] Error 101
+rustc 1.66.0-nightly (c97d02cdb 2022-10-05)
