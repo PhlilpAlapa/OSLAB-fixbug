@@ -89,6 +89,19 @@ https://doc.rust-lang.org/edition-guide/editions/transitioning-an-existing-proje
 
 有一个名为proc-macro2的库
 它的报错实例在这里
+
+error[E0635]: unknown feature `proc_macro_span_shrink`
+
+  --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.47/src/lib.rs:92:30
+  
+   |
+   
+92 |     feature(proc_macro_span, proc_macro_span_shrink)
+
+   |                              ^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to previous error
+
 https://github.com/google/OpenSK/issues/549
 现在编译出错会报此issue里面的错
 
