@@ -81,3 +81,22 @@ https://doc.rust-lang.org/edition-guide/editions/transitioning-an-existing-proje
 目前用于操作系统实验开发的 rustc 编译器的版本不局限在 1.46.0 这样的数字上，你可以选择更新版本的 rustc 编译器。但注意只能用 rustc 的 nightly 类型的版本。
 
 但rust如何回滚版本呢？恐怕也只可以去重装了，不知道如何去办。
+
+
+昨天倒腾的，今天才补上
+
+全麻现场：
+
+有一个名为proc-macro2的库
+它的报错实例在这里
+https://github.com/google/OpenSK/issues/549
+现在编译出错会报此issue里面的错
+
+https://github.com/dtolnay/proc-macro2/commit/cc97264f9f324ade9b820a1629f379b2cbb6e632
+找到这个库，发现是出在这个地方，当时的解决方案是锁版本到1.0.43
+
+但是现在已经是11月2日了，现在的版本已经是1.0.47，考虑其它包的版本依赖，最低不能低于1.0.46.
+这个编译错误又一次地发生了...
+得集体指定版本
+
+看了另一个文档，没遇见过这个问题
