@@ -102,3 +102,14 @@ https://github.com/dtolnay/proc-macro2/commit/cc97264f9f324ade9b820a1629f379b2cb
 看了另一个文档，没遇见过这个问题
 然后我查了另一个报错实例https://substrate.stackexchange.com/questions/5379/how-do-i-fix-a-failed-build-error-e0635-unknown-feature-proc-macro-span-shri
 它的要求是拉高版本，可是拉高版本后又会发生什么，我不知道。
+
+果然出现新麻烦了
+error[E0658]: const generics are unstable
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/volatile-0.4.5/src/lib.rs:686:21
+    |
+686 | impl<R, A, T, const N: usize> Volatile<R, A>
+    |                     ^
+    |
+    = note: see issue #44580 <https://github.com/rust-lang/rust/issues/44580> for more information
+    = help: add `#![feature(const_generics)]` to the crate attributes to enable
+   这又是什么东西——原来是21版本的原罪，12月1日修的
