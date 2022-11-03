@@ -126,3 +126,18 @@ error[E0658]: const generics are unstable
     = note: see issue #44580 <https://github.com/rust-lang/rust/issues/44580> for more information
     = help: add `#![feature(const_generics)]` to the crate attributes to enable
    这又是什么东西——原来是21版本的原罪，12月1日修的
+
+
+不得不升高版本，然后出现了高版本特有毛病：
+error[E0658]: use of unstable library feature 'asm': inline assembly is not stable enough for use and is subject to change
+  --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/x86_64-0.14.10/src/registers/xcontrol.rs:57:9
+   |
+57 |     use core::arch::asm;
+   |         ^^^^^^^^^^^^^^^
+   |
+   = note: see issue #72016 <https://github.com/rust-lang/rust/issues/72016> for more information
+   = help: add `#![feature(asm)]` to the crate attributes to enable
+但另一位同学的解决方法是：
+因为想用 asm! 取代 llvm_asm! 所以把整个依赖以及 toolchain 胡乱升级了一遍。 最后到了 shell 出现提示符，但是不能输入内容，现在还在顺着 async 链来找是哪出了问题。
+
+我疑惑究竟发生了什么
