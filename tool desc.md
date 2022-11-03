@@ -100,3 +100,5 @@ https://github.com/dtolnay/proc-macro2/commit/cc97264f9f324ade9b820a1629f379b2cb
 得集体指定版本
 
 看了另一个文档，没遇见过这个问题
+然后我查了另一个报错实例https://substrate.stackexchange.com/questions/5379/how-do-i-fix-a-failed-build-error-e0635-unknown-feature-proc-macro-span-shri
+它的要求是拉高版本，可是拉高版本后又会发生什么，我不知道。
