@@ -1,0 +1,198 @@
+
+warning: target json file contains unused fields: eliminate-frame-pointer
+
+error[E0557]: feature has been removed
+ --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/x86_64-0.11.8/src/lib.rs:5:43
+  |
+5 | #![cfg_attr(feature = "const_fn", feature(const_fn))]
+  |                                           ^^^^^^^^ feature has been removed
+  |
+  = note: split into finer-grained feature gates
+
+error[E0557]: feature has been removed
+ --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/x86_64-0.11.8/src/lib.rs:6:43
+  |
+6 | #![cfg_attr(feature = "const_fn", feature(const_in_array_repeat_expressions))]
+  |                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ feature has been removed
+  |
+  = note: removed due to causing promotable bugs
+
+   Compiling isomorphic_drivers v0.1.0 (https://github.com/rcore-os/isomorphic_drivers?rev=fcf694d2#fcf694d2)
+error[E0557]: feature has been removed
+  --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/lib.rs:27:12
+   |
+27 | #![feature(optin_builtin_traits)]
+   |            ^^^^^^^^^^^^^^^^^^^^ feature has been removed
+   |
+   = note: renamed to `auto_traits`
+
+   Compiling rcore-memory v0.1.0 (/mnt/d/CodeFile/2022spring/oslab/rCore/crate/memory)
+   Compiling rcore-fs-devfs v0.1.0 (https://github.com/rcore-os/rcore-fs?rev=517af47#517af47f)
+error[E0463]: can't find crate for `std`
+  |
+  = note: the `x86_64-12097317259400034384` target may not support the standard library
+  = note: `std` is required by `proc_macro2` because it does not declare `#![no_std]`
+  = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+For more information about this error, try `rustc --explain E0463`.
+warning: `proc-macro2` (lib) generated 1 warning (1 duplicate)
+error: could not compile `proc-macro2` due to previous error; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...
+error[E0557]: feature has been removed
+ --> /home/phlilp_alapa/.cargo/git/checkouts/isomorphic_drivers-31b3d52530ceb461/fcf694d/src/lib.rs:4:12
+  |
+4 | #![feature(const_fn)]
+  |            ^^^^^^^^ feature has been removed
+  |
+  = note: split into finer-grained feature gates
+
+error[E0437]: type `Ok` is not a member of trait `ops::Try`
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:174:5
+    |
+174 |     type Ok = Completion<()>;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^ not a member of trait `ops::Try`
+
+error[E0437]: type `Error` is not a member of trait `ops::Try`
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:175:5
+    |
+175 |     type Error = Error<()>;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^ not a member of trait `ops::Try`
+
+error[E0407]: method `into_result` is not a member of trait `ops::Try`
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:177:5
+    |
+177 | /     fn into_result(self) -> Result<(), ()> {
+178 | |         self.into()
+179 | |     }
+    | |_____^ not a member of trait `ops::Try`
+
+error[E0407]: method `from_error` is not a member of trait `ops::Try`
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:181:5
+    |
+181 | /     fn from_error(error: Self::Error) -> Self {
+182 | |         error.status()
+183 | |     }
+    | |_____^ not a member of trait `ops::Try`
+
+error[E0407]: method `from_ok` is not a member of trait `ops::Try`
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:185:5
+    |
+185 | /     fn from_ok(ok: Self::Ok) -> Self {
+186 | |         ok.status()
+187 | |     }
+    | |_____^ not a member of trait `ops::Try`
+
+error[E0658]: use of unstable library feature 'try_trait_v2'
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:173:6
+    |
+173 | impl ops::Try for Status {
+    |      ^^^^^^^^
+    |
+    = note: see issue #84277 <https://github.com/rust-lang/rust/issues/84277> for more information
+    = help: add `#![feature(try_trait_v2)]` to the crate attributes to enable
+
+error[E0220]: associated type `Error` not found for `Self`
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:181:32
+    |
+181 |     fn from_error(error: Self::Error) -> Self {
+    |                                ^^^^^ associated type `Error` not found
+
+error[E0220]: associated type `Ok` not found for `Self`
+   --> /home/phlilp_alapa/.cargo/registry/src/github.com-1ecc6299db9ec823/uefi-0.4.6/src/result/status.rs:185:26
+    |
+185 |     fn from_ok(ok: Self::Ok) -> Self {
+    |                          ^^ associated type `Ok` not found
+
+Some errors have detailed explanations: E0220, E0407, E0437, E0557, E0658.
+For more information about an error, try `rustc --explain E0220`.
+warning: `uefi` (lib) generated 1 warning (1 duplicate)
+warning: `vte` (lib) generated 1 warning (1 duplicate)
+warning: field is never read: `allocator`
+  --> /mnt/d/CodeFile/2022spring/oslab/rCore/crate/memory/src/memory_set/handler/shared.rs:67:5
+   |
+67 |     allocator: T,
+   |     ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+For more information about this error, try `rustc --explain E0557`.
+warning: `isomorphic_drivers` (lib) generated 1 warning (1 duplicate)
+warning: `x86_64` (lib) generated 1 warning
+warning: `rcore-fs-devfs` (lib) generated 1 warning (1 duplicate)
+warning: `rcore-memory` (lib) generated 2 warnings (1 duplicate)
+warning: `bitvec` (lib) generated 1 warning (1 duplicate)
+error: build failed
+make: *** [Makefile:334: kernel] Error 101
+
+
+奇妙修复方法：
+问题就在于cargo.lock文件，正常状况下，这个文件是由Cargo.toml生成的，但是，删除它或者更新它却会导致严重的问题。
+为什么呢？
+这个问题就在于，不是所有toml里提到的包都被指定了版本。被指定了的只有差不多一半。出问题的包就在未指定的版本之一。
+
+这也意味着，使用别的cargo.lock也会遇到一样的问题。
+
+error: the feature `const_if_match` has been stable since 1.46.0 and no longer requires an attribute to enable
+  --> src/lib.rs:11:12
+   |
+11 | #![feature(const_if_match)]
+   |            ^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> src/lib.rs:14:9
+   |
+14 | #![deny(stable_features)]
+
+我调低到了1.47.0的版本，恰好坏了，nightly-2020-08-04
+就是1.47.0，你们怎么跑通的？
+
+又是这个东西
+
+make[1]: Entering directory '/mnt/d/CodeFile/2022spring/oslab/rCore/rboot'
+cargo build -Z build-std=core,alloc --target x86_64-unknown-uefi --release
+error: failed to select a version for `proc-macro2`.
+    ... required by package `syn v1.0.103`
+    ... which is depended on by `uefi-macros v0.3.3`
+    ... which is depended on by `uefi v0.4.6`
+    ... which is depended on by `rboot v0.1.3 (/mnt/d/CodeFile/2022spring/oslab/rCore/rboot)`
+versions that meet the requirements `^1.0.46` are: 1.0.47, 1.0.46
+
+all possible versions conflict with previously selected packages.
+
+  previously selected package `proc-macro2 v1.0.44`
+    ... which is depended on by `quote v1.0.21`
+    ... which is depended on by `syn v1.0.103`
+    ... which is depended on by `uefi-macros v0.3.3`
+    ... which is depended on by `uefi v0.4.6`
+    ... which is depended on by `rboot v0.1.3 (/mnt/d/CodeFile/2022spring/oslab/rCore/rboot)`
+
+failed to select a version for `proc-macro2` which could resolve this conflict
+make[1]: *** [Makefile:17: build] Error 101
+make[1]: Leaving directory '/mnt/d/CodeFile/2022spring/oslab/rCore/rboot'
+make: *** [Makefile:314: bootloader] Error 2
+
+我c，我知道问题所在了，这个rboot的东西是没配置好的
+
+回查，查到当时的syn版本是1.0.41
+在rboot的kernel里面加了这个版本指定
+
+Building x86_64 kernel
+   Compiling proc-macro2 v1.0.21
+   Compiling syn v1.0.41
+   Compiling unicode-xid v0.2.1
+error[E0463]: can't find crate for `std`
+  |
+  = note: the `x86_64-12097317259400034384` target may not be installed
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0463`.
+error: could not compile `proc-macro2`.
+
+To learn more, run the command again with --verbose.
+warning: build failed, waiting for other jobs to finish...
+error: build failed
+
+然后出现了新的报错
+
+然后输入了make clean,统一版本再度编译看看效果
