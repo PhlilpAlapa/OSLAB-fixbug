@@ -24,3 +24,5 @@ error[E0635]: unknown feature 'proc_macro_span_shrink'
 | ^^^^^^^^^^^^^^^^^^^^^^
 
 降低版本即可，假如可以降低的话
+
+简要的说，假如发现feature不对，就调整rustc的版本就行。依赖的版本不对就去lock里面找它的上级依赖，看看是什么把版本锁了。
